@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import PokemonSelector from "./components/pokemonSelector";
+import TeamDisplay from "./components/teamDisplay";
 
 function App() {
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+  const [team, setTeam] = useState([]);
+
+  const handlePokemonSelection = (pokemon) => {
+    setSelectedPokemon(pokemon);
+    // Here, you would call the function to generate the team
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Pokémon Team Builder</h1>
+      <PokemonSelector onPokemonSelect={handlePokemonSelection} />
+      <TeamDisplay team={team} />
     </div>
   );
 }
 
 export default App;
+
+
