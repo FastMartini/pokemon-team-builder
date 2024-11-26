@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getPokemonData } from "src/services/pokeapi.js";
+import {getPokemonData} from "/Users/diegomartinez/Documents/GitHub/pokemon-team-builder/src/services/pokeapi.js";
 
 const PokemonSelector = ({ onPokemonSelect }) => {
   const [pokemonName, setPokemonName] = useState("");

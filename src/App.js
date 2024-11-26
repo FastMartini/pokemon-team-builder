@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import PokemonSelector from "./components/pokemonSelector";
 import TeamDisplay from "./components/teamDisplay";
-import { getPokemonData, getTypeData } from 'src/services/pokeapi.js';
-import './App.js'; 
+import { getPokemonData } from "/Users/diegomartinez/Documents/GitHub/pokemon-team-builder/src/services/pokeapi.js";  // Corrected path
+
+
+
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [team, setTeam] = useState([]);
