@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PokemonSelector from "./components/pokemonSelector";
 import TeamDisplay from "./components/teamDisplay";
+import { getPokemonData, getTypeData } from 'src/services/pokeapi.js';
 import './App.js'; 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
