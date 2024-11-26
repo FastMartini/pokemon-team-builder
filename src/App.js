@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PokemonSelector from "./components/pokemonSelector";
 import TeamDisplay from "./components/teamDisplay";
-
+import './App.js'; 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [team, setTeam] = useState([]);
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pokémon Team Builder</h1>
+      <img src="/transparent_poke_logo.png" alt="Pokémon Team Builder Logo" className="app-logo" />
       <PokemonSelector onPokemonSelect={handlePokemonSelection} />
       <TeamDisplay team={team} />
     </div>
