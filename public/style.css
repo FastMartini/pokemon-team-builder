@@ -11,9 +11,11 @@ body {
 }
 
 .app-logo {
-  width: 150px; /* Adjust the size of the logo */
+  width: 300px; /* Adjust the size of the logo */
   height: auto; /* Maintain aspect ratio */
   margin: 20px 0; /* Add some spacing */
+  margin-top: -100px;
+  
 }
 
 form {
