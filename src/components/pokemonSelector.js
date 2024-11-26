@@ -1,15 +1,25 @@
 import React, { useState } from "react";
+import { getPokemonData } from "src/services/pokeapi.js";
 
 const PokemonSelector = ({ onPokemonSelect }) => {
   const [pokemonName, setPokemonName] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (event) => {
     setPokemonName(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    onPokemonSelect(pokemonName);
+    setError("");
+
+    // Fetch Pokémon data
+    const pokemonData = await getPokemonData(pokemonName);
+    if (pokemonData) {
+      onPokemonSelect(pokemonData);
+    } else {
+      setError("Pokémon not found. Please try again!");
+    }
   };
 
   return (
@@ -24,6 +34,7 @@ const PokemonSelector = ({ onPokemonSelect }) => {
         />
         <button type="submit">Select</button>
       </form>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
