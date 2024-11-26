@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <img src="logo.png" alt="Pokémon Team Builder Logo" className="app-logo" />
+      <img src="/transparent_poke_logo.png" alt="Pokémon Team Builder Logo" className="app-logo" />
       <PokemonSelector onPokemonSelect={handlePokemonSelection} />
       <TeamDisplay team={team} />
     </div>
@@ -43,4 +43,3 @@ function App() {
 }
 
 export default App;
-
